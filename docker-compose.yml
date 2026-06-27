@@ -1,0 +1,14 @@
+﻿services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: donaton_frontend
+    ports:
+      - "5173:80"
+    networks:
+      - donaton_network
+
+networks:
+  donaton_network:
+    external: true
