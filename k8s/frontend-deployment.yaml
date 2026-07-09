@@ -15,12 +15,12 @@ spec:
     spec:
       containers:
         - name: donaton-frontend
-          image: 853605089904.dkr.ecr.us-east-1.amazonaws.com/donaton-frontend:eks-v1
+          image: 063406728315.dkr.ecr.us-east-1.amazonaws.com/donaton-frontend:eks-v1
           ports:
             - containerPort: 80
           env:
             - name: VITE_API_URL
-              value: "http://URL_BACKEND_RICARDO"
+              value: "http://donaton-backend:3000"
           resources:
             requests:
               cpu: "100m"

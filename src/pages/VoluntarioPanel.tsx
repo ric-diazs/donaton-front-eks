@@ -29,7 +29,7 @@ import { type DonacionRequest, type DonacionResponse } from '../types/donacionTy
 //import type { Donacion } from '../types'
 
 /** URL base del backend tomada de la variable de entorno VITE_API_URL del archivo .env */
-const API = import.meta.env.VITE_API_URL
+//const API = import.meta.env.VITE_API_URL
 
 /**
  * Mapa de colores de fondo y texto para cada estado de donación.
@@ -87,7 +87,8 @@ export default function VoluntarioPanel() {
    * pueda consultar el estado de cualquier donación registrada.
    */
   useEffect(() => {
-    fetch(`${API}/api/donaciones`)
+    //fetch(`${API}/api/donaciones`)
+    fetch('/api/donaciones')
       .then((r) => r.json())
       .then((data) => setDonaciones(data))
       .catch((e) => console.error('Error cargando donaciones:', e))
@@ -127,7 +128,8 @@ export default function VoluntarioPanel() {
     const handleSubmit = async (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-            const res = await fetch(`${API}/api/donaciones`, {
+            //const res = await fetch(`${API}/api/donaciones`, {
+            const res = await fetch('/api/donaciones', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json'  },
                 body: JSON.stringify(formData),

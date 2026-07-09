@@ -1,5 +1,6 @@
 ﻿services:
   frontend:
+    image: donaton-frontend
     build:
       context: .
       dockerfile: Dockerfile
