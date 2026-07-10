@@ -30,7 +30,9 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build --no-cache -t $ECR_REGISTRY/donaton-frontend:$IMAGE_TAG .
+          docker build --no-cache \
+            --build-arg VITE_API_URL=${{ secrets.VITE_API_URL }} \
+            -t $ECR_REGISTRY/donaton-frontend:$IMAGE_TAG .
           docker push $ECR_REGISTRY/donaton-frontend:$IMAGE_TAG
 
       - name: Actualizar kubeconfig
