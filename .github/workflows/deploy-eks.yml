@@ -37,12 +37,13 @@ jobs:
         run: |
           aws eks update-kubeconfig --region us-east-1 --name donaton-back-eks
 
-      - name: Desplegar en EKS
+          - name: Desplegar en EKS
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
           kubectl apply -f k8s/namespace.yaml
+          kubectl apply -f k8s/frontend-deployment.yaml
           kubectl set image deployment/donaton-frontend donaton-frontend=$ECR_REGISTRY/donaton-frontend:$IMAGE_TAG -n donaton
           kubectl apply -f k8s/frontend-service.yaml
           kubectl apply -f k8s/frontend-hpa.yaml
