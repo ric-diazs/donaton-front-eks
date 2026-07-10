@@ -14,8 +14,10 @@
  * La baseURL se toma de VITE_API_URL definida en el archivo .env.
  * se recibe un valor por defecto a localhost:3000 si la variable no está definida.
  */
+const API_URL = 'http://aab9c27dc765f4cd0b21367122be0b07-604008f835f81e17.elb.us-east-1.amazonaws.com'
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://aab9c27dc765f4cd0b21367122be0b07-604008f835f81e17.elb.us-east-1.amazonaws.com',
+  baseURL: API_URL,
 })
 /**
  * Interceptor de REQUEST.
