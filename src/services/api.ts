@@ -15,7 +15,7 @@
  * se recibe un valor por defecto a localhost:3000 si la variable no está definida.
  */
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://k8s-donaton-donatonb-9dd3917692-89713ca56bf3b9d1.elb.us-east-1.amazonaws.com',
+  baseURL: import.meta.env.VITE_API_URL || 'http://aab9c27dc765f4cd0b21367122be0b07-604008f835f81e17.elb.us-east-1.amazonaws.com',
 })
 /**
  * Interceptor de REQUEST.
