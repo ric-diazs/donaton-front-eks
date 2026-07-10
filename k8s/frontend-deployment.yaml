@@ -15,12 +15,9 @@ spec:
     spec:
       containers:
         - name: donaton-frontend
-          image: 063406728315.dkr.ecr.us-east-1.amazonaws.com/donaton-frontend:eks-v1
+          image: 063406728315.dkr.ecr.us-east-1.amazonaws.com/donaton-frontend:latest
           ports:
             - containerPort: 80
-          env:
-            - name: VITE_API_URL
-              value: "http://donaton-backend:3000"
           resources:
             requests:
               cpu: "100m"
