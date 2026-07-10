@@ -9,6 +9,8 @@ const getBaseURL = () => {
   return 'http://aab9c27dc765f4cd0b21367122be0b07-604008f835f81e17.elb.us-east-1.amazonaws.com'
 }
 
+console.log('API URL:', getBaseURL())
+
 const api = axios.create({
   baseURL: getBaseURL(),
 })
