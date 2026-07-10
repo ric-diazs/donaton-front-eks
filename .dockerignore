@@ -7,7 +7,8 @@ coverage
 
 # Archivos de configuración locales / secretos
 .env
-*.env
+.env.local
+.env.development
 
 # Archivos para Docker/infra que no necesitas meter al build context
 nextjs-container
