@@ -37,7 +37,7 @@ jobs:
         run: |
           aws eks update-kubeconfig --region us-east-1 --name donaton-back-eks
 
-          - name: Desplegar en EKS
+      - name: Desplegar en EKS
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
