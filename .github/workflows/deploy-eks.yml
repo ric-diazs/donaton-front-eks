@@ -28,12 +28,6 @@ jobs:
       - name: Verificar api.ts
         run: cat src/services/api.ts
 
-      - name: Verificar contenido api.ts en runner
-        run: |
-          cat src/services/api.ts
-          echo "---"
-          grep -c 'getBaseURL' src/services/api.ts
-
       - name: Build y push imagen Docker
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
