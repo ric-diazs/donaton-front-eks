@@ -35,8 +35,10 @@ jobs:
         run: |
           echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" > .env.production
           docker build --no-cache \
-            -t $ECR_REGISTRY/donaton-frontend:$IMAGE_TAG .
+            -t $ECR_REGISTRY/donaton-frontend:$IMAGE_TAG \
+            -t $ECR_REGISTRY/donaton-frontend:latest .
           docker push $ECR_REGISTRY/donaton-frontend:$IMAGE_TAG
+          docker push $ECR_REGISTRY/donaton-frontend:latest
 
       - name: Actualizar kubeconfig
         run: |
